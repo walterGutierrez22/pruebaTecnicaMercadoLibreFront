@@ -1,0 +1,60 @@
+<app-breadcrumb 
+    [breadcrumbs] = "productResult?.categories"    
+></app-breadcrumb>
+<div 
+    class="product-list__content"
+>
+    <div
+        *ngFor="let product of itemsProduct"
+        class="product-list__content-list"
+    >
+        <div  
+            class="product-list__content-list-item"
+        >
+            <div
+                class="product-list__content-img"
+            >
+                <img 
+                    class="product-list__img-product" 
+                    [src]="product.picture" 
+                    alt=""
+                    (click)="redirectProductDetail(product.id)"
+                />
+            </div>
+            <div
+                class="product-list__amount-name"
+            >
+                <div 
+                    class="product-list__amount-product"
+                >
+                    <span 
+                        (click)="redirectProductDetail(product.id)" 
+                    > {{ product.price.amount | formatCurrency }} </span>
+                    <img 
+                        *ngIf="product.free_shipping"
+                        src="../../../../assets/icons/product/ic_shipping.png" 
+                        alt=""
+                        (click)="redirectProductDetail(product.id)"
+                    />
+                </div>
+                <div 
+                    class="product-list__name-product"
+                >
+                    <span 
+                        (click)="redirectProductDetail(product.id)" 
+                    > {{ product.title }} </span>
+                </div>   
+            </div>
+            <div
+                class="product-list__city-name"
+            >
+                <span 
+                    (click)="redirectProductDetail(product.id)"
+                > {{ product.city_name }} </span>
+            </div>
+        </div>
+        <div 
+            class="product-list__line-divisor"
+        ></div>
+    </div>
+</div>

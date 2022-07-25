@@ -1,0 +1,70 @@
+<div 
+    *ngIf="itemProduct"
+    class="product-detail__content"
+>
+    <div
+        class="product-detail__content-detail"
+    >
+        <div
+            class="product-detail__content-items"
+        >
+            <div
+                class="product-detail__content-img"
+            >
+                <img 
+                    class="product-detail__content-img" 
+                    [src]="itemProduct?.picture" 
+                    alt=""
+
+                />
+            </div>
+            <div
+                class="product-detail__content-name-price"
+            >
+                <div>
+                    <span
+                        class="product-detail__text-condition"
+                    >
+                        {{itemProduct?.condition}} - {{itemProduct?.sold_quantity}} vendidos
+                    </span>
+                </div>
+                <div
+                    class="product-detail__content-name"
+                >
+                    {{itemProduct?.title}} 
+                </div>
+                <div
+                    class="product-detail__content-price"
+                >
+                   {{itemProduct?.price?.amount | formatCurrency}}
+                </div>
+                <div
+                    class="product-detail__content-btn-buy"
+                >
+                   <button 
+                        type="button"
+                        class="btn-buy"
+                    >
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div
+                class="product-detail__title-description"
+            >
+               <span>
+                    Descripción del producto
+               </span>
+            </div>
+            <div
+                class="product-detail__description"
+                [innerHTML]="itemProduct?.description"
+            >
+                
+            </div>
+        </div>
+    </div>
+    
+</div>

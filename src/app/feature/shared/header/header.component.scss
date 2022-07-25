@@ -1,0 +1,16 @@
+@import "../../../../variables.scss";
+
+.header__container {
+    background: $yellowSearchBar;
+    padding: 10px 0px;
+    display: flex;
+}
+
+.header__container-items {
+    display: flex;
+    margin: auto;
+}
+
+.header__img-search {
+    margin-right: 20px;
+}

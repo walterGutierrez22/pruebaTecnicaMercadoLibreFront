@@ -1,0 +1,34 @@
+
+<form
+    (ngSubmit)="searchProduct()" 
+>
+    <div 
+        class="search__container-items" 
+    >
+        <div>
+            <input 
+                class="search__input"
+                type="text"
+                placeholder="Nunca dejes de buscar"
+                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="searchValue"
+            /> 
+        
+        </div>
+        <div>
+            <button 
+                type="button"
+                class="search__button-search"
+                (click)="searchProduct()"
+                (keyup.enter)="searchProduct()"
+            >
+            <img 
+                src="../../../../assets/icons/search/ic_Search.png" 
+                alt=""
+            />
+            </button>
+        </div>
+    </div>
+</form>
+
+

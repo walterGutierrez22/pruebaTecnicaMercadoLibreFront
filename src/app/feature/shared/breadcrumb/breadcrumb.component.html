@@ -1,0 +1,16 @@
+<div>
+    <ng-template ngFor let-breadcrumb [ngForOf]="breadcrumbs" let-i="index">
+        <span 
+            class="breadcrumb__breadcrumb"
+            [ngClass]="{'font-weight-bold' : !validatePositionBreadcrumbs(i)}"
+        >
+            {{ breadcrumb }} 
+            <span 
+                *ngIf="validatePositionBreadcrumbs(i)"
+            > 
+                > 
+            </span> 
+        </span>
+    </ng-template>
+    
+</div>
